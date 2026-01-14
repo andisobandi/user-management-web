@@ -1,0 +1,62 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+    node: true,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:storybook/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+  ],
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  settings: {
+    react: { version: "detect" },
+    "import/resolver": { webpack: { config: "./webpack.config.common.js" } },
+  },
+  plugins: ["react", "react-hooks", "import"],
+  rules: {
+    "react/prop-types": "off",
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    quotes: ["error", "double", { avoidEscape: true }],
+    "no-shadow": "off",
+    "react/button-has-type": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        ObjectPattern: { multiline: true, minProperties: 8 },
+      },
+    ],
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "never",
+      },
+    ],
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "no-continue": "off",
+    "react/no-array-index-key": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-fragments": ["error", "element"],
+  },
+};

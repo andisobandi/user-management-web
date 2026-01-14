@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Inter;
+    src: url("./assets/fonts/inter/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url("./assets/fonts/inter/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url("./assets/fonts/inter/Inter-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url("./assets/fonts/inter/Inter-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    font-family: theme("fontFamily.body");
+    font-size: theme("fontSize.sm");
+    font-weight: theme("fontWeight.normal");
+    line-height: theme("lineHeight.normal");
+    background-color: #eef1f9;
+    color: #020817;
+  }
+
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+
+  *::placeholder,
+  *[data-placeholder] {
+    color: rgb(82 82 91 / 0.8);
+  }
+
+  .app-preloader .app-preloader-inner:after,
+  .app-preloader .app-preloader-inner:before {
+    background-color: #cad5e240;
+    border-radius: 3.40282e38px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .app-preloader .app-preloader-inner:after,
+  .app-preloader .app-preloader-inner:before {
+    --tw-content: "";
+    content: var(--tw-content);
+  }
+
+  .app-preloader .app-preloader-inner:after,
+  .app-preloader .app-preloader-inner:before {
+    animation: spinner-grow 3s cubic-bezier(0.55, 0.15, 0.45, 0.85) infinite;
+  }
+
+  .app-preloader .app-preloader-inner:after {
+    animation-delay: -1.5s;
+  }
+
+  @keyframes spinner-grow {
+    0%,
+    to {
+      transform: scale(0);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+  }
+}
