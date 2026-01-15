@@ -11,7 +11,7 @@ export const ButtonPrimary = React.forwardRef((props, ref) => {
       ref={ref}
       variant={variant}
       size={size}
-      className={cx("rounded-lg bg-blue-600 tw-hover:bg-blue-600/80", className)}
+      className={cx("bg-blue-600 tw-hover:bg-blue-600/80", className)}
       {...rest}
     >
       {children}

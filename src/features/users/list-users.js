@@ -10,7 +10,9 @@ import { Button, IconButton } from "@components/common/button";
 import { Menu } from "@components/common/menu";
 import { Portal } from "@components/common/portal";
 
-export function ListUsers() {
+export function ListUsers(props) {
+  const { onEdit, onDelete } = props;
+
   return (
     <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5">
       <Card.Root variant="subtle" size="sm" className="bg-tw-bg-panel shadow-sm">
@@ -24,8 +26,14 @@ export function ListUsers() {
             <Portal>
               <Menu.Positioner>
                 <Menu.Content>
-                  <Menu.Item value="edit">Edit</Menu.Item>
-                  <Menu.Item value="delete" className="text-tw-fg-error tw-hover:bg-red-50">
+                  <Menu.Item value="edit" onClick={() => onEdit(true)}>
+                    Edit
+                  </Menu.Item>
+                  <Menu.Item
+                    value="delete"
+                    className="text-tw-fg-error tw-hover:bg-red-50"
+                    onClick={() => onDelete(true)}
+                  >
                     Delete
                   </Menu.Item>
                 </Menu.Content>
