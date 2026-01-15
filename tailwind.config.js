@@ -194,6 +194,7 @@ module.exports = {
       },
       colors: {
         tw: {
+          foreground: "#020817",
           "black-alpha": {
             500: "rgba(0, 0, 0, 0.36)",
           },

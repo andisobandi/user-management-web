@@ -41,7 +41,7 @@
     font-weight: theme("fontWeight.normal");
     line-height: theme("lineHeight.normal");
     background-color: #eef1f9;
-    color: #020817;
+    color: theme("colors.tw.foreground");
   }
 
   [hidden]:where(:not([hidden="until-found"])) {

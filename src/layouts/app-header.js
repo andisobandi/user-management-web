@@ -19,7 +19,7 @@ export function AppHeader() {
             <IconButton size="sm" colorScheme="blue" variant="subtle">
               <IoIosApps />
             </IconButton>
-            <span className="text-xl font-semibold text-blue-600 lg:inline-block hidden">
+            <span className="text-xl font-semibold lg:inline-block hidden bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
               User Management System
             </span>
           </HStack>

@@ -11,10 +11,7 @@ export const ButtonPrimary = React.forwardRef((props, ref) => {
       ref={ref}
       variant={variant}
       size={size}
-      className={cx(
-        "rounded-lg bg-blue-600 tw-hover:bg-blue-600/80 dark:bg-blue-500 dark:tw-hover:bg-blue-500/80 dark:text-white",
-        className
-      )}
+      className={cx("rounded-lg bg-blue-600 tw-hover:bg-blue-600/80", className)}
       {...rest}
     >
       {children}
@@ -31,8 +28,7 @@ export const ButtonLink = React.forwardRef((props, ref) => {
       className={cx(
         "inline-flex h-9 min-w-9 shrink-0 items-center justify-center",
         "gap-2 rounded-lg px-3.5 align-middle font-medium transition-colors text-blue-600",
-        "tw-icon:shrink-0 tw-icon:size-4 tw-hover:text-blue-600/80",
-        "dark:text-blue-500 dark:tw-hover:text-blue-500/80"
+        "tw-icon:shrink-0 tw-icon:size-4 tw-hover:text-blue-600/80"
       )}
       {...rest}
     >

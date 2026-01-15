@@ -1,11 +1,13 @@
 import React from "react";
 
+import { Users as UserFeatures } from "@features/users";
+
 function Users() {
   React.useEffect(() => {
     document.title = "Users";
   }, []);
 
-  return <h3 className="text-xl">Users</h3>;
+  return <UserFeatures />;
 }
 
 export default Users;
