@@ -1,6 +1,6 @@
 export const API = {
   users: async () => {
-    const res = await fetch("../constants/users.json");
+    const res = await fetch("/data/users.json");
     if (!res.ok) throw new Error("Failed fetch users");
     const data = await res.json();
 

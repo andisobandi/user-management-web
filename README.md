@@ -14,7 +14,7 @@ This application demonstrates best practices in **state management, component ar
 
 The application displays a list of users with profile images, allows viewing user details in a modal, and supports **CRUD operations (Create, Read, Update, Delete)** using centralized state management.
 
-All data modifications are handled locally through React Context without backend persistence, as per assignment requirements.
+> Note: Add, edit, and delete operations only update the local state (no API persistence required).
 
 ## ✨ Key Features
 
@@ -31,21 +31,10 @@ All data modifications are handled locally through React Context without backend
 - React
 - ArkUI
 - React Context + useReducer
-- Axios
 - React Testing Library
 - ESLint & Prettier
 - TailwindCSS
 - React Hook Form
-- Tanstack Query
-
-## 🌐 Data Source
-
-- User data is fetched from:  
-  https://jsonplaceholder.typicode.com/users
-- Profile images are generated using:  
-  https://picsum.photos
-
-> Note: Add, edit, and delete operations only update the local state (no API persistence required).
 
 ## ▶️ Getting Started
 
