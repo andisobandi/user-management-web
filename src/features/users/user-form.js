@@ -5,10 +5,9 @@ import { z } from "zod";
 
 import { ButtonPrimary } from "@components/compositions/ui/button";
 import { Field } from "@components/compositions/ui/field";
-import { TextInput } from "@components/compositions/ui/text-input";
-import { EmailInput } from "@components/compositions/ui/email-input";
+import { TextInput, EmailInput } from "@components/compositions/ui/input";
 import { Stack } from "@components/common/stack";
-import { Dialog } from "@components/common/dialog";
+import { DialogBody, DialogFooter, DialogActionTrigger } from "@components/compositions/ui/dialog";
 
 export const formSchema = z.object({
   name: z
@@ -32,12 +31,13 @@ export const formSchema = z.object({
   website: z.string().url({ message: "Please enter a valid URL" }),
 });
 
-export function FormUsers(props) {
-  const { onHandleSubmit, isPending } = props;
+export function UserForm(props) {
+  const { onSubmit: onHandleSubmit, defaultValues, isPending } = props;
 
   const {
     control,
     handleSubmit,
+    reset,
     setError,
     formState: { errors, isValid },
   } = useForm({
@@ -52,12 +52,32 @@ export function FormUsers(props) {
     },
   });
 
+  React.useEffect(() => {
+    if (defaultValues) {
+      reset({
+        name: defaultValues.name ?? "",
+        username: defaultValues.username ?? "",
+        email: defaultValues.email ?? "",
+        phone: defaultValues.phone ?? "",
+        website: defaultValues.website ?? "",
+      });
+    } else {
+      reset({
+        name: "",
+        username: "",
+        email: "",
+        phone: "",
+        website: "",
+      });
+    }
+  }, [defaultValues, reset]);
+
   const onSubmit = handleSubmit((data) => onHandleSubmit(data, setError));
 
   return (
     <React.Fragment>
-      <Dialog.Body>
-        <form onSubmit={onSubmit}>
+      <DialogBody>
+        <form id="form-users" noValidate onSubmit={onSubmit}>
           <Stack className="gap-4">
             <Field invalid={!!errors.name} label="Name" errorText={errors.name?.message} required>
               <Controller
@@ -111,13 +131,13 @@ export function FormUsers(props) {
             </Field>
           </Stack>
         </form>
-      </Dialog.Body>
-      <Dialog.Footer>
-        <Dialog.ActionTrigger size="sm" />
-        <ButtonPrimary disabled={!isValid} loading={isPending} type="submit">
+      </DialogBody>
+      <DialogFooter>
+        <DialogActionTrigger size="sm" />
+        <ButtonPrimary disabled={!isValid} form="form-users" loading={isPending} type="submit">
           Save
         </ButtonPrimary>
-      </Dialog.Footer>
+      </DialogFooter>
     </React.Fragment>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useUserContext } from "@context/user-context";
-import { API } from "@services/api";
+import { fetchUsers } from "@context/user-actions";
 import {
   UserCardEmpty,
   UserCardLoading,
@@ -12,22 +12,11 @@ import { UserListItem } from "./user-list-item";
 
 export function UserList() {
   const { state, dispatch } = useUserContext();
-  const { users, loading } = state;
+  const { users, loading, isMutating } = state;
 
   React.useEffect(() => {
-    const loadUsers = async () => {
-      dispatch({ type: "SET_LOADING", payload: true });
-
-      try {
-        const data = await API.users();
-        dispatch({ type: "SET_USERS", payload: data });
-      } finally {
-        dispatch({ type: "SET_LOADING", payload: false });
-      }
-    };
-
-    loadUsers();
-  }, [dispatch]);
+    fetchUsers(dispatch);
+  }, [dispatch, isMutating]);
 
   return (
     <Show

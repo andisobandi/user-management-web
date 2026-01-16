@@ -6,6 +6,8 @@ import { Stack } from "@components/common/stack";
 import { Flex } from "@components/common/flex";
 import { useUserContext } from "@context/user-context";
 import { UserList } from "./user-list";
+import { UserAdd } from "./user-add";
+import { UserEdit } from "./user-edit";
 
 export function Users() {
   const { dispatch } = useUserContext();
@@ -29,6 +31,8 @@ export function Users() {
         </div>
       </div>
       <UserList />
+      <UserAdd />
+      <UserEdit />
     </div>
   );
 }
