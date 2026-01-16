@@ -8,6 +8,8 @@ import { useUserContext } from "@context/user-context";
 import { UserList } from "./user-list";
 import { UserAdd } from "./user-add";
 import { UserEdit } from "./user-edit";
+import { UserDelete } from "./user-delete";
+import { UserDetail } from "./user-detail";
 
 export function Users() {
   const { dispatch } = useUserContext();
@@ -33,6 +35,8 @@ export function Users() {
       <UserList />
       <UserAdd />
       <UserEdit />
+      <UserDelete />
+      <UserDetail />
     </div>
   );
 }

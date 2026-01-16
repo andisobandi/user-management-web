@@ -9,45 +9,9 @@ export const Badge = React.forwardRef((props, ref) => {
 
   const badge = useBadgeContext();
 
-  const getBadgeVariant = () => {
-    if (variant) {
-      return variant;
-    }
-
-    if (badge && badge.variant) {
-      return badge.variant;
-    }
-
-    return "subtle";
-  };
-
-  const getBadgeColor = () => {
-    if (colorScheme) {
-      return colorScheme;
-    }
-
-    if (badge && badge.color) {
-      return badge.colorScheme;
-    }
-
-    return "gray";
-  };
-
-  const getBadgeSize = () => {
-    if (size) {
-      return size;
-    }
-
-    if (badge && badge.size) {
-      return badge.size;
-    }
-
-    return "sm";
-  };
-
-  const badgeSize = getBadgeSize();
-  const badgeColor = getBadgeColor();
-  const badgeVariant = getBadgeVariant();
+  const badgeVariant = variant ?? badge?.variant ?? "subtle";
+  const badgeColor = colorScheme ?? badge?.colorScheme ?? "gray";
+  const badgeSize = size ?? badge?.size ?? "sm";
 
   const classes = getBadgeClasses({
     size: badgeSize,

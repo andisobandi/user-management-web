@@ -31,6 +31,18 @@ export const putUser = async (dispatch, payload, user) => {
   } catch (error) {
     throw new Error(error);
   } finally {
+    dispatch({ type: "SELECT_USER", payload: null });
+    dispatch({ type: "SET_MODE", payload: null });
+  }
+};
+
+export const deleteUser = (dispatch, user) => {
+  try {
+    dispatch({ type: "DELETE_USER", payload: user });
+  } catch (error) {
+    throw new Error(error);
+  } finally {
+    dispatch({ type: "SELECT_USER", payload: null });
     dispatch({ type: "SET_MODE", payload: null });
   }
 };

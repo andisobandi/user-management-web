@@ -5,6 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 import { Card } from "@components/common/card";
 import { Stack } from "@components/common/stack";
+import { Badge } from "@components/common/badge";
 import { Avatar } from "@components/common/avatar";
 import { Text } from "@components/common/typography/text";
 import { Button, IconButton } from "@components/common/button";
@@ -40,18 +41,24 @@ export function UserListItem(props) {
           </Avatar.Root>
           <Stack className="gap-0 items-center">
             <Text className="font-semibold text-lg">{user.name}</Text>
-            <Text className="text-tw-fg-muted text-sm before:content-['@'] lowercase">
+            <Badge className="before:content-['@'] lowercase gap-0" colorScheme="purple">
               {user.username}
-            </Text>
+            </Badge>
           </Stack>
         </Stack>
-        <Card.Description>
+        <Card.Description className="text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet magna sed nulla
           convallis ultrices.
         </Card.Description>
       </Card.Body>
       <Card.Footer>
-        <Button colorScheme="blue" variant="subtle" size="sm" className="flex-1">
+        <Button
+          colorScheme="blue"
+          variant="subtle"
+          size="sm"
+          className="flex-1"
+          onClick={() => openDialog(user, "detail")}
+        >
           <LuUser />
           Profile
         </Button>
