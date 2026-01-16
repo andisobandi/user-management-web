@@ -25,15 +25,13 @@ const config = {
   resolve: {
     extensions: [".js", ".jsx", ".json"],
     alias: {
-      "@assets": path.resolve(__dirname, "src/assets"),
       "@components": path.resolve(__dirname, "src/components"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@layouts": path.resolve(__dirname, "src/layouts"),
-      "@hooks": path.resolve(__dirname, "src/hooks"),
       "@icons": path.resolve(__dirname, "src/components/icons"),
-      "@config": path.resolve(__dirname, "src/config"),
       "@features": path.resolve(__dirname, "src/features"),
       "@services": path.resolve(__dirname, "src/services"),
+      "@context": path.resolve(__dirname, "src/context"),
     },
   },
   module: {

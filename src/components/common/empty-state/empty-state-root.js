@@ -10,11 +10,15 @@ export const EmptyStateRoot = React.forwardRef((props, ref) => {
     <EmptyStateProvider value={{ size }}>
       <div
         ref={ref}
-        className={cx("w-full", {
-          "py-6 px-4": size === "sm",
-          "py-12 px-8": size === "md",
-          "py-16 px-12": size === "lg",
-        })}
+        className={cx(
+          "w-full",
+          {
+            "py-6 px-4": size === "sm",
+            "py-12 px-8": size === "md",
+            "py-16 px-12": size === "lg",
+          },
+          className
+        )}
         {...rest}
       />
     </EmptyStateProvider>
