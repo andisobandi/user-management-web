@@ -6,7 +6,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { Card } from "@components/common/card";
 import { Stack } from "@components/common/stack";
 import { Badge } from "@components/common/badge";
-import { Avatar } from "@components/common/avatar";
+import { Avatar } from "@components/compositions/ui/avatar";
 import { Text } from "@components/common/typography/text";
 import { Button, IconButton } from "@components/common/button";
 import { useUserContext } from "@context/user-context";
@@ -35,10 +35,7 @@ export function UserListItem(props) {
       </Card.Header>
       <Card.Body>
         <Stack className="mb-6 gap-3 items-center">
-          <Avatar.Root size="2xl">
-            <Avatar.Image src={user.avatar} />
-            <Avatar.Fallback name={user.name} />
-          </Avatar.Root>
+          <Avatar size="2xl" name={user.name} src={user.avatar} />
           <Stack className="gap-0 items-center">
             <Text className="font-semibold text-lg">{user.name}</Text>
             <Badge className="before:content-['@'] lowercase gap-0" colorScheme="purple">

@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogCloseTrigger,
 } from "@components/compositions/ui/dialog";
-import { Avatar } from "@components/common/avatar";
+import { Avatar } from "@components/compositions/ui/avatar";
 import { HStack } from "@components/common/stack";
 import { useUserContext } from "@context/user-context";
 import { DataListRoot, DataListItem } from "@components/compositions/ui/data-list";
@@ -48,10 +48,7 @@ export function UserDetail() {
               label="User"
               value={
                 <HStack>
-                  <Avatar.Root size="xs">
-                    <Avatar.Image src={selectedUser.avatar} />
-                    <Avatar.Fallback name={selectedUser.name} />
-                  </Avatar.Root>
+                  <Avatar size="xs" name={selectedUser.name} src={selectedUser.avatar} />
                   {selectedUser.name}
                 </HStack>
               }
