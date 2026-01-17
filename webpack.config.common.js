@@ -32,6 +32,7 @@ const config = {
       "@features": path.resolve(__dirname, "src/features"),
       "@services": path.resolve(__dirname, "src/services"),
       "@context": path.resolve(__dirname, "src/context"),
+      "@test-utils": path.resolve(__dirname, "src/test-utils"),
     },
   },
   module: {

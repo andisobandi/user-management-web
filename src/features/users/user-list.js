@@ -12,11 +12,11 @@ import { UserListItem } from "./user-list-item";
 
 export function UserList() {
   const { state, dispatch } = useUserContext();
-  const { users, loading, isMutating } = state;
+  const { users, loading } = state;
 
   React.useEffect(() => {
     fetchUsers(dispatch);
-  }, [dispatch, isMutating]);
+  }, [dispatch]);
 
   return (
     <Show

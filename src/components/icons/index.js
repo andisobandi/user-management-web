@@ -4,3 +4,4 @@ export * from "./chevron-up";
 export * from "./close";
 export * from "./check";
 export * from "./warning";
+export * from "./menu-bar";
